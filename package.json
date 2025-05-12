@@ -1,0 +1,19 @@
+// package.json (root level)
+{
+  "name": "storyverse",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "web"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=web",
+    "build:web": "npm run build --workspace=web",
+    "supabase:start": "supabase start",
+    "supabase:deploy": "supabase functions deploy mcp-server",
+    "supabase:serve": "supabase functions serve --no-verify-jwt"
+  },
+  "devDependencies": {
+    "supabase": "^1.115.4"
+  }
+}
