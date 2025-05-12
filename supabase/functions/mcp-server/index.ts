@@ -81,7 +81,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 })
 
 // Create HTTP handler for Edge Function
-const httpHandler = async (req: Request) => {
+serve(async (req) => {
   try {
     // Extract request body
     const body = await req.json()
@@ -104,7 +104,4 @@ const httpHandler = async (req: Request) => {
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     )
   }
-}
-
-// Start serving HTTP requests
-serve(httpHandler)
+})
